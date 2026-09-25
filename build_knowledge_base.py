@@ -27,7 +27,7 @@ collection = client.get_or_create_collection(
 
 # Add chunks to the collection - ChromaDB automatically generates embeddings
 collection.add(
-    ids=[f"chunk{i}" for i in range(len(chunks))],  # Unique ID for each chunk
+    ids=[f"chunk: {i}" for i in range(len(chunks))],  # Unique ID for each chunk
     documents=chunks,  # The actual text content
     metadatas=[{"source": "profile", "chunk_index": i} for i in range(len(chunks))],
 )
