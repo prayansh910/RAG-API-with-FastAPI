@@ -22,7 +22,7 @@ collection = client.get_or_create_collection(
 )
 
 
-# Define the expected shape of incoming data for the POST endpoint
+#Define the expected shape of incoming data for the POST endpoint 
 class DocumentSubmission(BaseModel):
     user_name: str  # Who this profile belongs to
     content: str  # The profile text to store
