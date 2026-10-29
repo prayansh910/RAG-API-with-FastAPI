@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f7f3">
+  <title>Recall — Local RAG</title>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="/"><span class="brand-mark">R</span><span>Recall<span class="brand-sub">LOCAL KNOWLEDGE</span></span></a>
+    <div class="connection"><span class="pulse"></span> PRIVATE · RUNNING LOCALLY</div>
+  </header>
+  <main class="layout">
+    <section class="intro">
+      <div class="eyebrow">YOUR DOCUMENTS, IN CONTEXT</div>
+      <h1>A little more<br>knowledge, <em>on demand.</em></h1>
+      <p>Save notes to your local knowledge base, then ask questions in plain language. Answers include the passages used to find them.</p>
+      <div class="steps"><span><b>01</b> ADD NOTES</span><i></i><span><b>02</b> ASK A QUESTION</span><i></i><span><b>03</b> SEE THE SOURCE</span></div>
+    </section>
+    <section class="workspace">
+      <div class="panel add-panel">
+        <div class="panel-heading"><div><span class="number">01</span><h2>Add to your library</h2></div><span class="tag">TEXT</span></div>
+        <form id="document-form">
+          <label for="user-name">Library name</label>
+          <input id="user-name" name="user_name" maxlength="100" placeholder="e.g. my-notes" required>
+          <label for="document-content">Your notes</label>
+          <textarea id="document-content" name="content" rows="5" maxlength="100000" placeholder="Paste text here. Separate sections with a blank line." required></textarea>
+          <div class="form-footer"><span id="save-status" class="status" aria-live="polite">Your text stays on this machine.</span><button type="submit">Save notes <span>↗</span></button></div>
+        </form>
+      </div>
+      <div class="panel ask-panel">
+        <div class="panel-heading"><div><span class="number">02</span><h2>Ask your library</h2></div><span class="tag green">RAG</span></div>
+        <form id="question-form">
+          <label for="question">What would you like to know?</label>
+          <div class="ask-row"><input id="question" maxlength="2000" placeholder="Ask something from your notes…" required><button aria-label="Ask question" type="submit">↗</button></div>
+          <label for="filter-user" class="filter-label">Limit search to a library <span>OPTIONAL</span></label>
+          <input id="filter-user" maxlength="100" placeholder="Use the same name as above">
+        </form>
+        <div id="answer" class="answer hidden" aria-live="polite"></div>
+      </div>
+    </section>
+    <footer><span>FastAPI · ChromaDB · Ollama</span><a href="/docs" target="_blank" rel="noreferrer">API documentation ↗</a></footer>
+  </main>
+  <script src="/static/app.js" defer></script>
+</body>
+</html>

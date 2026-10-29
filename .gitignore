@@ -1,12 +1,16 @@
-# Python virtual environment
+# Python virtual environments
 .venv/
+venv/
 
-# ChromaDB local database
+# Local vector database and personal source data
 chroma_db/
+profile.txt
 
-# Python cache
+# Python cache and generated files
 __pycache__/
-*.pyc
+*.py[cod]
 
-# Environment variables / secrets
+# Secrets and local environment settings
 .env
+.env.*
+!.env.example

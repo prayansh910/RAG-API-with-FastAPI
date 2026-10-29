@@ -1,0 +1,5 @@
+The Northstar demo team builds small internal tools for research and operations. Their prototype knowledge assistant uses FastAPI for a local API and ChromaDB for semantic search. Documents are divided into paragraphs, embedded with a local embedding model, and stored on the developer's computer.
+
+For a demo, the team asks which database stores the document vectors. The notes say ChromaDB.
+
+The prototype uses a compact local language model. Its answers should be checked against the retrieved source passages before anyone relies on them.
